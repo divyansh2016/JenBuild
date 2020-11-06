@@ -6,7 +6,7 @@ pipeline {
 	}
 //
 //	environment {
-//		M2_INSTALL = "/home/mani/Desktop/softwares/apache-maven-3.6.3/bin/mvn"
+//		M2_INSTALL = "/home/mani/packages/apache-maven-3.6.3/bin/mvn"
 //	}
 
     stages {
