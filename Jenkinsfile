@@ -1,9 +1,7 @@
 pipeline {
     agent any
 
-	tools {
-		maven 'maven3.6'
-	}
+	
 //
 //	environment {
 //		M2_INSTALL = "/home/mani/packages/apache-maven-3.6.3/bin/mvn"
