@@ -1,5 +1,4 @@
-<project>
-
+<project> 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gamutgurus</groupId>
@@ -25,7 +24,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>gamutgurus</finalName>
+		<finalName>JenBuild</finalName>
 	</build>
 	
 </project>
