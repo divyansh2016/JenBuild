@@ -2,10 +2,10 @@ pipeline {
     agent any
 
 	
-//
-//	environment {
-//		M2_INSTALL = "/home/mani/packages/apache-maven-3.6.3/bin/mvn"
-//	}
+
+	environment {
+		M2_INSTALL = "/home/mani/packages/apache-maven-3.6.3/bin/mvn"
+	}
 
     stages {
 		stage('Clone-Repo') {
