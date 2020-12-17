@@ -10,7 +10,7 @@ pipeline {
     stages {
 		stage('Clone-Repo') {
 			steps {
-				git 'https://github.com/divyansh2016/JenBuild.git'
+				sh 'git clone https://github.com/divyansh2016/JenBuild.git'
 			}
 		}
 	
