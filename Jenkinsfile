@@ -28,11 +28,11 @@ pipeline {
 		}
 
 	
-		stage('Deployment') {
-			steps {
-				sh 'sshpass -p "mani" scp target/gamutgurus.war mani@172.17.0.3:/home/mani/packages/apache-tomcat-8.5.58/webapps'
-				sh 'sshpass -p "mani" ssh mani@172.17.0.3 "JAVA_HOME=/home/mani/packages/jdk1.8.0_261" "/home/mani/packages/apache-tomcat-8.5.58/bin/startup.sh"'
-	    	}
-		}
+		//stage('Deployment') {
+		//	steps {
+		//		sh 'sshpass -p "mani" scp target/gamutgurus.war mani@172.17.0.3:/home/mani/packages/apache-tomcat-8.5.58/webapps'
+		//		sh 'sshpass -p "mani" ssh mani@172.17.0.3 "JAVA_HOME=/home/mani/packages/jdk1.8.0_261" "/home/mani/packages/apache-tomcat-8.5.58/bin/startup.sh"'
+	    	//}
+		//}
     }
 }
