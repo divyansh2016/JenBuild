@@ -10,7 +10,7 @@ pipeline {
     stages {
 		stage('Clone-Repo') {
 			steps {
-				checkout scm
+				git 'https://github.com/divyansh2016/JenBuild.git'
 			}
 		}
 	
