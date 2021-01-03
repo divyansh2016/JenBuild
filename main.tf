@@ -1,5 +1,6 @@
 provider "aws" {
     region = var.AWS_REGION
+    profile = "list"
 }
 
 resource "aws_instance" "ec2_instance" {
