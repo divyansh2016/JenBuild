@@ -7,5 +7,5 @@ resource "aws_instance" "ec2_instance" {
     ami = var.AMI
     key_name = "aws"
     instance_type = "t2.micro"
-    tags = {Name = "CASSANDRA_SERVER"}
+    tags = {Name = "Jen-Ter-Ans-server"}
 }
