@@ -24,7 +24,7 @@ inline = [
 connection {
     type     = "ssh"
     user     = "ubuntu"
-    private_key = "aws.pem"
+    private_key = file("./aws.pem")
     host     = aws_instance.ec2_instance.public_ip
   }
 }
