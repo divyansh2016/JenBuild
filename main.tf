@@ -9,15 +9,14 @@ resource "aws_instance" "ec2_instance" {
     instance_type = "t2.micro"
     tags = {Name = "Jen-Ter-Ans-server"}
 
-}
+
 
 provisioner "remote-exec" {
 
 inline = [
-
-"sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config",
-"sudo sed -i "/^[^#]*PubkeyAuthentication[[:space:]]no/c\PubkeyAuthentication yes" /etc/ssh/sshd_config",
-"sudo sed -i "/^[^#]*PermitRootLogin[[:space:]]no/c\PermitRootlogin yes" /etc/ssh/sshd_config",
+"sudo sed -i s/PasswordAuthentication no/PasswordAuthentication yes/  /etc/ssh/sshd_config",
+"sudo sed -i s/PubkeyAuthentication no/PubkeyAuthentication yes/ /etc/ssh/sshd_config",
+"sudo sed -i s/PermitRootLogin no/PermitRootlogin yes/ /etc/ssh/sshd_config",
 "sudo service sshd restart"
 
 ]
@@ -25,9 +24,9 @@ inline = [
 connection {
     type     = "ssh"
     user     = "ubuntu"
-    private_key = file("/home/mani/key-pair/aws.pem")
-    host     = aws_instance.web.public_ip
+    private_key = "aws.pem"
+    host     = aws_instance.ec2_instance.public_ip
   }
 }
 
-
+}
