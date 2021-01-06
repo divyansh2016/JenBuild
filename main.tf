@@ -16,7 +16,7 @@ provisioner "remote-exec" {
 inline = [
 "sudo sed -i s/PasswordAuthentication no/PasswordAuthentication yes/  /etc/ssh/sshd_config",
 "sudo sed -i s/PubkeyAuthentication no/PubkeyAuthentication yes/ /etc/ssh/sshd_config",
-"sudo sed -i s/PermitRootLogin no/PermitRootlogin yes/ /etc/ssh/sshd_config",
+"sudo sed -i s/PermitRootLogin no/PermitRootLogin yes/ /etc/ssh/sshd_config",
 "sudo service sshd restart"
 
 ]
