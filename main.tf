@@ -10,23 +10,28 @@ resource "aws_instance" "ec2_instance" {
     tags = {Name = "Jen-Ter-Ans-server"}
 
 
+  connection {
+    type     = "ssh"
+    user     = "ubuntu"
+    private_key = file("aws.pem")
+    host     = aws_instance.ec2_instance.public_ip
+  }
 
-provisioner "remote-exec" {
+   
+
+
+  provisioner "remote-exec" {
 
 inline = [
-"sudo sed -i s/PasswordAuthentication no/PasswordAuthentication yes/  /etc/ssh/sshd_config",
-"sudo sed -i s/PubkeyAuthentication no/PubkeyAuthentication yes/ /etc/ssh/sshd_config",
-"sudo sed -i s/PermitRootLogin no/PermitRootLogin yes/ /etc/ssh/sshd_config",
-"sudo service sshd restart"
+"sudo chmod 777 -R /tmp/"
+
 
 ]
 
-connection {
-    type     = "ssh"
-    user     = "ubuntu"
-    private_key = file("./aws.pem")
-    host     = aws_instance.ec2_instance.public_ip
-  }
-}
 
+}
+provisioner "file" {
+    source      = "sshd.sh"
+    destination = "/tmp/sshd.sh"
+  }
 }
