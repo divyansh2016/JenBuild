@@ -13,7 +13,7 @@ resource "aws_instance" "ec2_instance" {
   connection {
     type     = "ssh"
     user     = "ubuntu"
-    private_key = file("aws.pem")
+    private_key = file("/home/mani/key-pair/aws.pem")
     host     = aws_instance.ec2_instance.public_ip
   }
 
