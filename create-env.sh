@@ -1,8 +1,7 @@
 #!/bin/bash
 cont_count=$1
 echo "creating $cont_count containers.."
-sleep 2;
-for i in `seq $cont_count`
+sleep 333for i in `seq $cont_count`
 do
 	echo "=============================="
     echo "Creating www.JenBuild$i container.."
